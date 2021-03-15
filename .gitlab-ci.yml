@@ -6,6 +6,3 @@ build:
   script:
     - npm i -g web-ext
     - web-ext build
-  artifacts:
-    paths:
-      - web-ext-artifacts/
