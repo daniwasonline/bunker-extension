@@ -1,4 +1,4 @@
 [submodule "bunker"]
 	path = bunker
-	url = https://ci-git.bean.codes/danny/bunker-firefox-and-chromium-extension.git
+	url = https://ci-git.bean.codes/danny/bunker-firefox-and-chromium-extension/-/tree/app
 	branch = app
