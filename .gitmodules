@@ -4,4 +4,5 @@
 	branch = app
 [submodule "bunker-github"]
 	path = bunker-github
-	url = bunker-github
+	url = https://github.com/Dannnington/bunker-extension.git
+	branch = app
