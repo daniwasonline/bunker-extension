@@ -1,4 +1,4 @@
 [submodule "bunker"]
 	path = bunker
-	url = https://github.com/Dannnington/bunker-extension.git
+	url = https://ci-git.bean.codes/danny/bunker.git
 	branch = app
