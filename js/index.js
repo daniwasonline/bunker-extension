@@ -4,23 +4,41 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 const defaultConfig = `{
+    "bookmarks": [
+        {
+            "category": "Social Media",
+            "bookmarks": [
+                { "label": "Facebook",          "url": "https://www.facebook.com" },
+                { "label": "Messenger",         "url": "https://www.messenger.com" },
+                { "label": "Instagram",         "url": "https://www.instagram.com" }
+            ]
+        },
+        {
+            "category": "Entertainment",
+            "bookmarks": [
+                { "label": "YouTube",           "url": "https://www.youtube.com" },
+                { "label": "Twitch",            "url": "https://www.twitch.com" }
+            ]
+        }
+    ],
 
     "glass": {
-        "background": "rgba(43,43,43, 0.25)",
-        "backgroundHover": "rgba(47, 43, 48, 0.35)",
-        "blur": 30
+        "background": "rgba(47, 43, 48, 0.568)",
+        "backgroundHover": "rgba(47, 43, 48, 0.568)",
+        "blur": 12
     },
 
     "background": {
-        "url": "https://cdn.bean.codes/a/cabin.png",
+        "url": "https://images.wallpapersden.com/image/download/night-mountains-summer-illustration_a2plamaUmZqaraWkpJRsa25trWloaGU.jpg",
         "snow": {
             "enabled": false,
             "count": 200
         },
         "mist": {
-            "enabled": true,
-            "opacity": 6
-        }
+            "enabled": false,
+            "opacity": 5
+        },
+        "css": ""
     }
 }`;
 
