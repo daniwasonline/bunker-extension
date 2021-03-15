@@ -1,7 +1,11 @@
 default:
 image: node:14
 
-build-job:
+  artifacts:
+    paths:
+      - web-ext-artifacts/
+
+build:
   stage: build
   script:
     - npm i -g web-ext
