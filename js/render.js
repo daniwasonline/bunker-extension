@@ -34,9 +34,6 @@ function Root() {
 
         <!-- ${Toolbar()} -->
 
-        ${GamesDrawer()}
-        ${EditorDialog({id: 'Config'})}
-
         <div id="Snow">
             ${Snow()}
         </div>
@@ -147,56 +144,8 @@ function SearchBox() {
                     <input id="Search_Input" class="glass---hover" type="text"  />
             </div>
 
-            <button id="Search_VoiceRecognition" class="iconButton"  > <i class="bi bi-mic"></i> </button>
+            <button id="settingscog" class="iconButton"  > <a href="config.html"> <i class="bi bi-gear-wide-connected"></i> </a> </button>
 
-        </div>
-    `
-}
-
-function GamesDrawer() {
-
-    const steamGames = 
-        config.steamGames && (config.steamGames.length > 0)
-        ?
-        `
-            <div class="DrawerHeader" >
-                <h3>Steam Games</h3>    
-            </div>
-
-            <div class="DrawerContent SteamDrawer" > ${config.steamGames.map(sg => SteamGame(sg)).join('')}</div>
-        `
-        : ''
-
-
-    return html`
-        <div class="DrawerRoot" >
-
-            ${steamGames}
-            
-            <div class="DrawerHeader" >
-                <h3>Configuration</h3>    
-            </div>
-
-            <div class="DrawerContent SteamDrawer_Configuration" > 
-                <button onclick="__ToggleConfigEditor()" > Configure Bunker </button>
-            </div>
-        </div>
-    `
-}
-
-function SteamGame({ id, title, logoHash }) {
-
-    let logo = !!logoHash ? `https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/${id}/${logoHash}.ico` :  'media/steam_icon_logo.svg'
-
-    return html`
-        <div>
-            <a href="steam://rungameid/${id}" >
-                <div class="SteamGame aSteamGame--expandable" >
-                    <img class="SteamGame_Backdrop" src="https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg" width="300" alt="game backdrop" />
-                    <img class="SteamGame_Icon" width="46" src="${logo}" alt="game logo" />
-                    <div class="SteamGame_Label" >${title}</div>
-                </div>
-            </a>
         </div>
     `
 }
@@ -261,42 +210,6 @@ function __SaveConfig() {
         // alert('error!?')
         setEditorError("Invalid JSON, save aborted!");
     }
-}
-
-function EditorDialog({ id }) {
-    let cfg = localStorage.getItem('saferoom_config') ?? defaultConfig;
-
-    // https://stackoverflow.com/questions/6637341/use-tab-to-indent-in-textarea
-
-    return html`
-        <div class="EditorRoot" id="Editor_${id}" >
-            <textarea
-                spellcheck="false"
-                id="EditorTextarea_${id}"
-
-                onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'    '+v.substring(e);this.selectionStart=this.selectionEnd=s+4;return false;}"
-            >${cfg}</textarea>
-
-            <div class="Editor_Toolbar">
-
-                <div id="Editor_ErrorMessage" > &nbsp; </div>
-
-
-                <div class="Editor_Actions">
-                    <button onclick="__ToggleConfigEditor()" > Close </button>
-                    
-                    
-                    <button onclick="__ClearConfig()" > Clear Config </button>
-                    <button onclick="__RevertEditorChanges()" > Revert Changes </button>
-                    <button onclick="__LoadConfigBackup()" > Load Previous </button>
-
-                    <button onclick="__SaveConfig()" > Save </button>
-
-                </div>
-
-            </div>
-        </div>
-    `
 }
 
 function setLang(value) {
