@@ -6,3 +6,5 @@ build-job:
   script:
     - npm i -g web-ext
     - web-ext build
+  paths:
+    web-ext-artifacts/
