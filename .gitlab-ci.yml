@@ -1,9 +1,9 @@
 default:
 image: node:14
 
-  artifacts:
-    paths:
-      - web-ext-artifacts/
+artifacts:
+  paths:
+    - web-ext-artifacts/
 
 build:
   stage: build
