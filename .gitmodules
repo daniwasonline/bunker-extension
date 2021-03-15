@@ -3,6 +3,5 @@
 	url = https://ci-git.bean.codes/danny/bunker-firefox-and-chromium-extension/-/tree/app
 	branch = app
 [submodule "bunker-github"]
-	path = bunker-gitlab
-	url = https://github.com/Dannnington/bunker-extension.git
-	branch = app
+	path = bunker-github
+	url = bunker-github
