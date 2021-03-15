@@ -3,6 +3,11 @@
     "name": "Bunker",
     "version": "1.1.0",
     "description": "A Firefox extension for Bunker, a start page.",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "bunker.ext@bean.codes"
+        }
+    },
     "chrome_url_overrides": {
         "newtab": "bunker/index.html"
     }

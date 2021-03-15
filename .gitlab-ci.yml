@@ -4,4 +4,5 @@ image: node:14
 build-job:
   stage: build
   script:
-    - npm install
+    - npm i -g web-ext
+    - web-ext build
