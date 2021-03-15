@@ -1,1 +1,2 @@
-bunker-ext
+# Bunker Extension
+A version of [Bunker](https://github.com/pukmajster/bunker) but in an extension format. At this moment in time, it is only compatible with Firefox and there were many changes made in order to allow support for Firefox. These changes include (but are not limited to) **stripping of the integrated configuration editor and the stripping of the Steam games extension**. The configuration editor had to be moved to an entirely new page due to the painstaking work required in order to port this over. I also removed the Steam integration because I created this for myself and I'm not exactly fond of the feature myself.
